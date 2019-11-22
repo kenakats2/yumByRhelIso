@@ -4,7 +4,7 @@ This script can create repo file and update fstab to use yum cmd over rhel iso f
 # How to use this tool?
 Update yumByRhelIso.conf for your iso file path.
 
-##Run scripts
+## Run scripts
 ```
 ./yumByRhelIso.sh
 ```
