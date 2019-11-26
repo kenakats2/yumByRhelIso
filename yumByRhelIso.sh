@@ -13,13 +13,15 @@ fi
 sudo tee /etc/yum.repos.d/dvd.repo << EOF
 [dvd]
 name=dvd
-baseurl=file:///media/dvd/BaseOS
+baseurl=$baseUrl
 gpgcheck=1
 enabled=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
 EOF
 
 # Update fstab
-echo "${isoFilePath} /media/dvd   iso9660   loop,ro,auto,nofail 0 0" >> /etc/fstab
+sudo -s << EOF
+  echo "${isoFilePath} /media/dvd   iso9660   loop,ro,auto,nofail 0 0" >> /etc/fstab
+EOF
 
 sudo mount -a
